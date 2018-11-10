@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: {{ .Release.Namespace }}
+spec:
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello
+        image: gcr.io/hello:{{.Values.image.dockerTag}}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: ENVIROMNENT
+          value: {{ .Values.environment }}

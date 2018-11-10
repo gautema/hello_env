@@ -1,0 +1,5 @@
+fullnameOverride: hello
+image:
+  repository: https://github.com/gautema/hello_env
+  pullPolicy: Always #IfNotPresent
+  dockerTag: latest
